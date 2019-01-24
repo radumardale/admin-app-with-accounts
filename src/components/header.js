@@ -8,10 +8,12 @@ const HaderWrapper = styled.div`
 `;
 
 const SearchArea = styled.div`
-  flex: 1 0 auto;
+  margin-left: auto;
+  flex: 0 0 auto;
   display: flex;
   align-items: center;
   padding-left: ${p => p.theme.gap.XXL};
+  padding-right: ${p => p.theme.gap.XXL};
   position: relative;
 `;
 const ButtonsArea = styled.div`
@@ -20,16 +22,25 @@ const ButtonsArea = styled.div`
 
 const HeaderButton = styled.button`
   border: 1px solid transparent;
-  color: ${p => p.theme.indigo[500]};
-  font-size: 16px;
+  color: ${p => p.theme.indigo[400]};
+  font-size: 14px;
   cursor: pointer;
 
   height: 100%;
   padding: ${p => p.theme.gap.M} ${p => p.theme.gap.M} ${p => p.theme.gap.M};
 
+  :focus {
+    outline: 0;
+  }
+
   :hover {
     background: ${p => p.theme.indigo[600]};
     color: ${p => p.theme.grey[50]};
+  }
+
+  &:active {
+    background: ${p => p.theme.indigo[900]};
+    color: ${p => p.theme.indigo[200]};
   }
 `;
 
@@ -44,7 +55,7 @@ const StyledInput = styled.input`
   min-width: 12rem;
   padding: ${p => p.theme.gap.S} ${p => p.theme.gap.M};
   padding-left: ${p => p.theme.gap.XXXXL};
-  font-side: 14px;
+  font-size: 1rem;
   font-family: 'Futura Md BT Medium';
   color: ${p => p.theme.grey[700]};
   background: ${p => p.theme.grey[50]};
