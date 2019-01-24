@@ -4,6 +4,7 @@ import Icon from '../components/common/icon';
 import Menu from '../components/menu';
 import MainArea from '../components/mainArea';
 import H from '../components/header';
+import Select from 'react-select';
 
 const headerHeight = 42;
 const sidebarWidth = '180px';
@@ -43,7 +44,7 @@ const Content = styled.div`
 
 const Logo = styled.div`
   height: ${`${headerHeight}px`};
-  color: ${p => p.theme.indigo[700]};
+  color: ${p => p.theme.indigo[200]};
   background: ${p => p.theme.colours.white};
 
   border-bottom: 1px solid ${p => p.theme.grey[100]};
@@ -56,24 +57,37 @@ const Logo = styled.div`
   }
 `;
 
-const Button = styled.button`
-  height: 100%;
-  cursor: pointer;
-  border: 1px solid transparent;
-  border-right: 1px solid ${p => p.theme.grey[100]};
-  background: ${p => p.theme.colours.white};
-  padding: 0 ${p => p.theme.gap.M};
-  color: ${p => p.theme.indigo[600]};
-  font-size: 18px;
+const options = [
+  { value: 'default', label: 'Default account' },
+  { value: 'strawberry', label: 'Strawberry' },
+  { value: 'vanilla', label: 'Vanilla' }
+];
 
-  outline: 0;
-  :hover {
-    background: ${p => p.theme.grey[700]};
-    color: ${p => p.theme.grey[100]};
+const StyledSelect = styled(Select)`
+  .s__control {
+    border: 1px solid transparent;
+    border-bottom: 1px solid ${p => p.theme.grey[100]};
+    border-radius: 0;
   }
-  :active {
-    background: ${p => p.theme.grey[600]};
-    color: ${p => p.theme.grey[800]};
+  .s__control:hover {
+    border: 1px solid transparent;
+    border-bottom: 1px solid ${p => p.theme.grey[100]};
+    border-radius: 0;
+  }
+  .s__value-container {
+    padding-left: ${p => p.theme.gap.XXL};
+  }
+  .s__single-value {
+    color: ${p => p.theme.indigo[400]};
+  }
+  .s__indicator-separator {
+    background-color: ${p => p.theme.colours.white};
+  }
+  .s__dropdown-indicator {
+    color: ${p => p.theme.indigo[200]};
+  }
+  .s__control--is-disabled {
+    background: ${p => p.theme.colours.white};
   }
 `;
 
@@ -88,6 +102,15 @@ class Home extends React.Component {
           <Logo>
             <Icon icon="cloud" />
           </Logo>
+          <StyledSelect
+            disabled
+            isDisabled
+            isSearchable={false}
+            classNamePrefix="s"
+            options={options}
+            value={options[0]}
+          />
+
           <Menu />
         </Sidebar>
         <Content>
