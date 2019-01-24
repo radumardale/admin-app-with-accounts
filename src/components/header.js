@@ -9,6 +9,10 @@ const HaderWrapper = styled.div`
 
 const SearchArea = styled.div`
   flex: 1 0 auto;
+  display: flex;
+  align-items: center;
+  padding-left: ${p => p.theme.gap.XXL};
+  position: relative;
 `;
 const ButtonsArea = styled.div`
   flex: 0 1 auto;
@@ -29,12 +33,41 @@ const HeaderButton = styled.button`
   }
 `;
 
+const SearchIcon = styled(Icon)`
+  position: absolute;
+  left: ${p => p.theme.gap.XXXL};
+  color: ${p => p.theme.indigo[100]};
+`;
+
+const StyledInput = styled.input`
+  transition: background-color 0.5s ease;
+  min-width: 12rem;
+  padding: ${p => p.theme.gap.S} ${p => p.theme.gap.M};
+  padding-left: ${p => p.theme.gap.XXXXL};
+  font-side: 14px;
+  font-family: 'Futura Md BT Medium';
+  color: ${p => p.theme.grey[700]};
+  background: ${p => p.theme.grey[50]};
+  border: 1px solid ${p => p.theme.grey[100]};
+  border-radius: 3px;
+
+  :focus {
+    outline: 0;
+    background: ${p => p.theme.colours.white};
+  }
+
+  &::-webkit-input-placeholder {
+    color: ${p => p.theme.indigo[200]};
+  }
+`;
+
 class Hader extends React.Component {
   render() {
     return (
       <HaderWrapper>
         <SearchArea>
-          <input placeholder="search" />
+          <SearchIcon icon="search" />
+          <StyledInput placeholder="search" />
         </SearchArea>
         <ButtonsArea>
           <HeaderButton>

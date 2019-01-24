@@ -10,7 +10,7 @@ const MainAreaWrapper = styled.div`
 const Header = styled.div`
   flex: 1 0 auto;
 
-  background: ${p => p.theme.grey[50]};
+  background: ${p => p.theme.indigo[50]};
   font-size: 14px;
   padding: 0 ${p => p.theme.gap.XXXL} ${p => p.theme.gap.XXL};
 

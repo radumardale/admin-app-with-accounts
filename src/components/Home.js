@@ -6,8 +6,8 @@ import MainArea from '../components/mainArea';
 import H from '../components/header';
 import Select from 'react-select';
 
-const headerHeight = 42;
-const sidebarWidth = '180px';
+const headerHeight = 45;
+const sidebarWidth = 'auto';
 
 const Wrapper = styled.div`
   display: grid;
@@ -44,7 +44,7 @@ const Content = styled.div`
 
 const Logo = styled.div`
   height: ${`${headerHeight}px`};
-  color: ${p => p.theme.indigo[200]};
+  color: ${p => p.theme.indigo[400]};
   background: ${p => p.theme.colours.white};
 
   border-bottom: 1px solid ${p => p.theme.grey[100]};
@@ -65,6 +65,7 @@ const options = [
 
 const StyledSelect = styled(Select)`
   .s__control {
+    min-width: 160px;
     border: 1px solid transparent;
     border-bottom: 1px solid ${p => p.theme.grey[100]};
     border-radius: 0;
@@ -84,6 +85,8 @@ const StyledSelect = styled(Select)`
     background-color: ${p => p.theme.colours.white};
   }
   .s__dropdown-indicator {
+    padding-top: ${p => p.theme.gap.L};
+    padding-bottom: ${p => p.theme.gap.L};
     color: ${p => p.theme.indigo[200]};
   }
   .s__control--is-disabled {

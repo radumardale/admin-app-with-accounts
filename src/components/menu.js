@@ -7,9 +7,14 @@ const MenuList = styled.ul`
 `;
 const MenuItem = styled.li`
   color: ${p => p.theme.indigo[700]};
-  font-size: 14px;
-  padding: ${p => p.theme.gap.M} ${p => p.theme.gap.XXXL} ${p => p.theme.gap.M};
 
+  padding: ${p => p.theme.gap.M} ${p => p.theme.gap.XXXXL} ${p => p.theme.gap.M}
+    ${p => p.theme.gap.XXXL};
+
+  span {
+    display: inline-block;
+    margin-right: ${p => p.theme.gap.L};
+  }
   svg {
     display: inline-block;
     vertical-align: middle;
@@ -70,7 +75,7 @@ class Menu extends React.Component {
           return (
             <MenuItem>
               <Icon icon={item.icon} />
-              {item.name}
+              <span>{item.name}</span>
             </MenuItem>
           );
         })}
