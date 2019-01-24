@@ -11,7 +11,7 @@ const GlobalStyle = createGlobalStyle`
     line-height: 24px;
   }
   body {
-    color: white;
+    color: red;
     margin: 0;
     padding: 0;
 

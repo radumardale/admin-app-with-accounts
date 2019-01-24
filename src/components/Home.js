@@ -18,7 +18,7 @@ const Wrapper = styled.div`
     'sidebar content'
     'sidebar  content';
   background: ${p => p.theme.colours.white};
-  color: #444;
+  color: ${p => p.theme.grey[800]};
   height: 100vh;
 `;
 
@@ -36,6 +36,7 @@ const Sidebar = styled.div`
   background: ${p => p.theme.colours.white};
   border-right: 1px solid ${p => p.theme.grey[100]};
   z-index: 1;
+  box-shadow: 0 16px 71px 3px ${p => p.theme.grey[100]};
 `;
 const Content = styled.div`
   grid-area: content;
