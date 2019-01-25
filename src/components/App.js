@@ -1,15 +1,23 @@
-import React from "react";
-import GlobalStyle from "../globalStyle";
+import React from 'react';
+import GlobalStyle from '../globalStyle';
 
-import Home from "./Home";
+import { HashRouter as Router, Route } from 'react-router-dom';
+
+import Home from './Home';
+import Login from './Login';
+import SignUp from './SignUp';
 
 class App extends React.Component {
   render() {
     return (
-      <React.Fragment>
-        <Home />
-        <GlobalStyle />
-      </React.Fragment>
+      <Router>
+        <React.Fragment>
+          <Route path="/" exact component={Home} />
+          <Route path="/login" exact component={Login} />
+          <Route path="/signup" exact component={SignUp} />
+          <GlobalStyle />
+        </React.Fragment>
+      </Router>
     );
   }
 }

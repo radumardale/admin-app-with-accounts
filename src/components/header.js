@@ -1,6 +1,7 @@
 import React from 'react';
 import Icon from '../components/common/icon';
 import styled, { css } from 'styled-components';
+import { Link } from 'react-router-dom';
 
 const HaderWrapper = styled.div`
   display: flex;
@@ -87,6 +88,7 @@ class Hader extends React.Component {
           <HeaderButton>
             <Icon icon="calendar-alt" />
           </HeaderButton>
+          <Link to="/login">Login</Link>
           <HeaderButton>
             <Icon icon="power-off" />
           </HeaderButton>

@@ -2,8 +2,8 @@ import { createGlobalStyle } from 'styled-components';
 import reset from 'styled-reset';
 import font from './fontFace';
 
-// @import url(${p => p.theme.typo.importFont});
 const GlobalStyle = createGlobalStyle`
+  @import url(${p => p.theme.typo.importFont});
   ${font};
   ${reset};
   html, .root {
@@ -11,11 +11,11 @@ const GlobalStyle = createGlobalStyle`
     line-height: 24px;
   }
   body {
-    color: red;
+    color: ${p => p.theme.grey[800]};
     margin: 0;
     padding: 0;
 
-    font-family:'Futura Md BT Medium';
+    font-family: ${p => p.theme.typo.font};
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
 
@@ -82,6 +82,14 @@ p, ul, ol, pre, table, blockquote {
   margin-bottom: 1.5rem;
 }
 
+a {
+  color: ${p => p.theme.indigo[600]};
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
 
 `;
 

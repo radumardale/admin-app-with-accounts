@@ -107,8 +107,6 @@ class Home extends React.Component {
             <Icon icon="cloud" />
           </Logo>
           <StyledSelect
-            disabled
-            isDisabled
             isSearchable={false}
             classNamePrefix="s"
             options={options}
