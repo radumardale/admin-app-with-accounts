@@ -25,8 +25,10 @@ const Wrapper = styled.div`
 const Header = styled.div`
   grid-area: header;
   background: ${p => p.theme.colours.white};
-  border-bottom: 1px solid ${p => p.theme.grey[100]};
+  border-bottom: 1px solid ${p => p.theme.indigo[50]};
   z-index: 1;
+
+  box-shadow: 0 1px 3px rgba(100, 100, 100, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
 
   display: flex;
   align-items: center;
@@ -34,10 +36,13 @@ const Header = styled.div`
 const Sidebar = styled.div`
   grid-area: sidebar;
   background: ${p => p.theme.colours.white};
-  border-right: 1px solid ${p => p.theme.grey[100]};
+  border-right: 1px solid ${p => p.theme.indigo[50]};
   z-index: 1;
-  box-shadow: 0 16px 71px 3px ${p => p.theme.grey[100]};
+
+  box-shadow: 0 44px 3px rgba(100, 100, 100, 0.12),
+    0 44px 2px rgba(0, 0, 0, 0.24);
 `;
+
 const Content = styled.div`
   grid-area: content;
   background: ${p => p.theme.colours.white};
@@ -48,7 +53,7 @@ const Logo = styled.div`
   color: ${p => p.theme.indigo[400]};
   background: ${p => p.theme.colours.white};
 
-  border-bottom: 1px solid ${p => p.theme.grey[100]};
+  border-bottom: 1px solid ${p => p.theme.indigo[50]};
   font-family: ${p => p.theme.typo.headerFont};
   display: flex;
   align-items: center;
@@ -68,12 +73,12 @@ const StyledSelect = styled(Select)`
   .s__control {
     min-width: 160px;
     border: 1px solid transparent;
-    border-bottom: 1px solid ${p => p.theme.grey[100]};
+    border-bottom: 1px solid ${p => p.theme.indigo[50]};
     border-radius: 0;
   }
   .s__control:hover {
     border: 1px solid transparent;
-    border-bottom: 1px solid ${p => p.theme.grey[100]};
+    border-bottom: 1px solid ${p => p.theme.indigo[50]};
     border-radius: 0;
   }
   .s__value-container {
@@ -107,6 +112,7 @@ class Home extends React.Component {
             <Icon icon="cloud" />
           </Logo>
           <StyledSelect
+            isDisabled
             isSearchable={false}
             classNamePrefix="s"
             options={options}

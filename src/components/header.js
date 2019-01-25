@@ -1,7 +1,7 @@
 import React from 'react';
 import Icon from '../components/common/icon';
 import styled, { css } from 'styled-components';
-import { Link } from 'react-router-dom';
+import { withRouter } from 'react-router-dom';
 
 const HaderWrapper = styled.div`
   display: flex;
@@ -57,7 +57,7 @@ const StyledInput = styled.input`
   padding: ${p => p.theme.gap.S} ${p => p.theme.gap.M};
   padding-left: ${p => p.theme.gap.XXXXL};
   font-size: 1rem;
-  font-family: 'Futura Md BT Medium';
+  font-family: ${p => p.theme.typo.font};
   color: ${p => p.theme.grey[700]};
   background: ${p => p.theme.grey[50]};
   border: 1px solid ${p => p.theme.grey[100]};
@@ -88,8 +88,11 @@ class Hader extends React.Component {
           <HeaderButton>
             <Icon icon="calendar-alt" />
           </HeaderButton>
-          <Link to="/login">Login</Link>
-          <HeaderButton>
+          <HeaderButton
+            onClick={() => {
+              this.props.history.push('/login');
+            }}
+          >
             <Icon icon="power-off" />
           </HeaderButton>
         </ButtonsArea>
@@ -98,4 +101,4 @@ class Hader extends React.Component {
   }
 }
 
-export default Hader;
+export default withRouter(Hader);

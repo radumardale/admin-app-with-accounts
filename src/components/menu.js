@@ -73,7 +73,7 @@ class Menu extends React.Component {
       <MenuList>
         {menuItems.map(item => {
           return (
-            <MenuItem>
+            <MenuItem key={`item-${item.name}`}>
               <Icon icon={item.icon} />
               <span>{item.name}</span>
             </MenuItem>

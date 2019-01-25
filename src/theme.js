@@ -1,8 +1,10 @@
 import { rem } from 'polished';
 
 const typo = {
-  importFont: 'https://fonts.googleapis.com/css?family=Crete+Round',
-  font: "'Futura Md BT Medium', sans-serif",
+  importFont: 'https://fonts.googleapis.com/css?family=Crete+Round|Roboto',
+  // font: "'Futura Md BT Medium', sans-serif",
+  font: 'Futura, sans-serif',
+  // font: "'Roboto', sans-serif",
   headerFont: "'Crete Round', serif",
   fontMono:
     "source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace",

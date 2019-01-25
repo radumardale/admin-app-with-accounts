@@ -18,6 +18,17 @@ const FullRowInput = styled(Input)`
   grid-row: 1fr;
 `;
 
+const FullRow = styled.div`
+  text-align: justify;
+  grid-column: span 2;
+  grid-row: 1fr;
+  padding-top: ${p => p.theme.gap.XXXXL};
+  padding-bottom: ${p => p.theme.gap.XL};
+  padding-left: ${p => p.theme.gap.L};
+  padding-right: ${p => p.theme.gap.L};
+  color: ${p => p.theme.grey[600]};
+`;
+
 const HalfRow = styled.div`
   display: flex;
   align-items: center;
@@ -30,25 +41,28 @@ const HalfRow = styled.div`
   }
 `;
 
-const SignUpLink = styled(Link)`
+const LoginLink = styled(Link)`
   margin-right: ${p => p.theme.gap.L};
 `;
 
-class SignUpPage extends React.Component {
+class ResetPasswordPage extends React.Component {
   render() {
     return (
       <PageWrapper>
         <LoginPanel>
-          <h3>Sign up for new ccount</h3>
+          <h3>Reset password</h3>
+          <FullRow>
+            Please fill your email and you will receive a link with reset your
+            password
+          </FullRow>
           <FullRowInput topLabel="Email" />
-          <FullRowInput topLabel="Password" type="password" />
           <HalfRow>
-            <SignUpLink tabIndex="-1" to="/login">
+            <LoginLink tabIndex="-1" to="/login">
               I already have an account
-            </SignUpLink>
+            </LoginLink>
           </HalfRow>
           <HalfRow>
-            <Button kind="primary">Create account</Button>
+            <Button kind="primary">Send reset link</Button>
           </HalfRow>
         </LoginPanel>
       </PageWrapper>
@@ -56,4 +70,4 @@ class SignUpPage extends React.Component {
   }
 }
 
-export default SignUpPage;
+export default ResetPasswordPage;

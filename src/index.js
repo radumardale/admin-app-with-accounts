@@ -1,9 +1,9 @@
-import React from "react";
-import ReactDOM from "react-dom";
-import theme from "./theme";
-import { ThemeProvider } from "styled-components";
-import App from "./components/App";
-import "./icons";
+import React from 'react';
+import ReactDOM from 'react-dom';
+import theme from './theme';
+import { ThemeProvider } from 'styled-components';
+import App from './components/App';
+import './icons';
 
 function EntryPoint() {
   return (
@@ -13,5 +13,5 @@ function EntryPoint() {
   );
 }
 
-const rootElement = document.getElementById("root");
+const rootElement = document.getElementById('root');
 ReactDOM.render(<EntryPoint />, rootElement);

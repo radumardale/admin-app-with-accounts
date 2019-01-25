@@ -3,6 +3,8 @@ import styled from 'styled-components';
 import Input from '../components/common/input';
 import Button from '../components/common/button';
 import { Link } from 'react-router-dom';
+import LoginPanel from '../components/common/loginPanel';
+import { withRouter } from 'react-router-dom';
 
 const PageWrapper = styled.div`
   display: flex;
@@ -10,26 +12,6 @@ const PageWrapper = styled.div`
   width: 100%;
   height: 100vh;
   background: ${p => p.theme.indigo[50]};
-`;
-
-const LoginPanel = styled.div`
-  max-width: 32rem;
-  min-width: 29rem;
-  border: 1px solid ${p => p.theme.grey[100]};
-  background: ${p => p.theme.colours.white};
-  margin: 4rem auto;
-  padding: 0 ${p => p.theme.gap.XXXL};
-
-  display: grid;
-  grid-template-columns: 50% 50%;
-
-  h3 {
-    text-align: center;
-    grid-column: span 2;
-    grid-row: 1fr;
-    color: ${p => p.theme.indigo[500]};
-    margin-bottom: ${p => p.theme.gap.XXL};
-  }
 `;
 
 const FullRowInput = styled(Input)`
@@ -68,7 +50,14 @@ class LoginPage extends React.Component {
             <LoginLink tabIndex="-1" autoleft="true" to="/recover-password">
               Recover password
             </LoginLink>
-            <Button kind="primary">Login</Button>
+            <Button
+              kind="primary"
+              onClick={() => {
+                this.props.history.push('/');
+              }}
+            >
+              Login
+            </Button>
           </HalfRow>
         </LoginPanel>
       </PageWrapper>
@@ -76,4 +65,4 @@ class LoginPage extends React.Component {
   }
 }
 
-export default LoginPage;
+export default withRouter(LoginPage);

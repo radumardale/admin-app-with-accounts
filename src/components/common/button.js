@@ -31,7 +31,7 @@ const ButtonStyled = styled.button`
   color: ${p => p.theme.grey[50]};
   background-image: linear-gradient(
     ${p => p.theme.indigo[600]},
-    ${p => adjustHue(12, p.theme.indigo[600])}
+    ${p => adjustHue(14, p.theme.indigo[600])}
   );
   border: 1px solid ${p => p.theme.indigo[600]};
   box-shadow: 2px 2px 5px 0px rgba(119, 119, 119, 0.25);
@@ -44,7 +44,7 @@ const ButtonStyled = styled.button`
     color: ${p => p.theme.colours.white};
     background-image: linear-gradient(
       ${p => p.theme.indigo[800]},
-      ${p => adjustHue(12, p.theme.indigo[800])}
+      ${p => adjustHue(14, p.theme.indigo[800])}
     );
     box-shadow: 4px 4px 5px 0px rgba(119, 119, 119, 0.25);
   }
