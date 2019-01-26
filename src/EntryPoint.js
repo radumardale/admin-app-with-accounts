@@ -1,15 +1,15 @@
 import React from 'react';
-import GlobalStyle from '../globalStyle';
+import GlobalStyle from './globalStyle';
 
 import { HashRouter as Router, Route } from 'react-router-dom';
 
-import Home from './Home';
-import Login from './Login';
-import SignUp from './SignUp';
-import ResetPassword from './ResetPassword';
+import Home from './app/App';
+import Login from './public/Login';
+import SignUp from './public/SignUp';
+import ResetPassword from './public/ResetPassword';
 import NotFound from './NotFound';
 
-class App extends React.Component {
+class EntryPoint extends React.Component {
   render() {
     return (
       <Router>
@@ -26,4 +26,4 @@ class App extends React.Component {
   }
 }
 
-export default App;
+export default EntryPoint;

@@ -1,9 +1,9 @@
 import React from 'react';
 import styled, { css } from 'styled-components';
 import Icon from '../components/common/icon';
-import Menu from '../components/menu';
-import MainArea from '../components/mainArea';
-import H from '../components/header';
+import Menu from './menu';
+import MainArea from './mainArea';
+import H from './header';
 import Select from 'react-select';
 
 const headerHeight = 45;
@@ -100,7 +100,7 @@ const StyledSelect = styled(Select)`
   }
 `;
 
-class Home extends React.Component {
+class App extends React.Component {
   render() {
     return (
       <Wrapper>
@@ -129,4 +129,4 @@ class Home extends React.Component {
   }
 }
 
-export default Home;
+export default App;

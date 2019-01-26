@@ -2,16 +2,16 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import theme from './theme';
 import { ThemeProvider } from 'styled-components';
-import App from './components/App';
+import EntryPoint from './EntryPoint';
 import './icons';
 
-function EntryPoint() {
+function App() {
   return (
     <ThemeProvider theme={theme}>
-      <App />
+      <EntryPoint />
     </ThemeProvider>
   );
 }
 
 const rootElement = document.getElementById('root');
-ReactDOM.render(<EntryPoint />, rootElement);
+ReactDOM.render(<App />, rootElement);

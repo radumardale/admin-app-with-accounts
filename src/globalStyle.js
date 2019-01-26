@@ -1,6 +1,7 @@
 import { createGlobalStyle } from 'styled-components';
 import reset from 'styled-reset';
 import font from './fontFace';
+import { between } from 'polished';
 
 const GlobalStyle = createGlobalStyle`
   @import url(${p => p.theme.typo.importFont});
